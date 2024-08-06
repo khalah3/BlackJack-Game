@@ -14,11 +14,10 @@ while continue_game:
   computer_cards=[]
   for i in range(2):
     player_cards.append(random.choice(list))
-  for i in range(1):
     computer_cards.append(random.choice(list))
   print(f'Player cards are : {player_cards}\n')
   print(f'Player_score:{sum(player_cards)}\n')
-  print(f'First_computer_card:{sum(computer_cards)}\n')
+  print(f'First_computer_card:{(computer_cards[0])}\n')
   
   if sum(player_cards)==21 and len(player_cards)==2:
     print('Player has a blackjack')
@@ -28,7 +27,6 @@ while continue_game:
   def more_cards():
     choice=input("Type y to get another card, type n to pass\n\n")
     if choice=='y':
-      for i in range(1):
          player_cards.append(random.choice(list))
          print(player_cards)
          if sum(player_cards) >21 and 11 in player_cards:
@@ -51,7 +49,6 @@ while continue_game:
   
   def computer_draw():
     if player_score <=21:
-      computer_cards.append(random.choice(list))
       while sum(computer_cards) <17:
         computer_cards.append(random.choice(list))
       print(f'The computer cards are {computer_cards}\n')
